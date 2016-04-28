@@ -28,6 +28,15 @@
 
 
 var doSomethingNifty = function() {
-  document.getElementById('cool').className = 'nifty red';
+  
+  var currentClassName = document.getElementById('cool').className;
+
+  if (currentClassName == 'nifty'){
+      document.getElementById('cool').className = 'nifty red';
+  } else {
+    document.getElementById('cool').className = 'nifty';
+  }
+
+  
 
 }
