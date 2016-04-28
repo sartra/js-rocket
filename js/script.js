@@ -25,3 +25,9 @@
           }
         }
       };
+
+
+var doSomethingNifty = function() {
+  document.getElementById('cool').className = 'nifty red';
+
+}

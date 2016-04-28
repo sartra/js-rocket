@@ -1,3 +1,14 @@
 body{
   background-color: grey;
 }
+
+.nifty {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  transition: background-color 2s;
+}
+
+.nifty.red {
+  background-color: red;
+}
