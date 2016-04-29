@@ -15,6 +15,21 @@ var changeState = function (state) {
         timer = setInterval(function (){
           countdownNumber --; 
           document.getElementById('countdown').innerHTML = countdownNumber;
+          
+          if (countdownNumber > 5 && countdownNumber <= 8){
+            //be nervous
+            document.getElementById('nervous').className = 'nervous show';
+          } else {
+            document.getElementById('nervous').className = 'nervous';
+          }
+
+          if (countdownNumber < 5 && countdownNumber >1){
+            //can't wait
+            document.getElementById('cant-wait').className = 'cant-wait show';
+          } else {
+            document.getElementById('cant-wait').className = 'cant-wait';
+          }
+
           if (countdownNumber <= 0){
             changeState(3);
           }; 
@@ -28,13 +43,19 @@ var changeState = function (state) {
           console.log('randomNumber: ' + randomNumber);
 
                 //success 
-                if (randomNumber > 2){
+                if (randomNumber > 4){
                     changeState(4);
 ;                } else {
                     changeState(5); // oh noo!
                 };
 
           }, 2000);
+
+     } else if (state == 1) {
+    document.getElementById('cant-wait').className = 'cant-wait';
+    document.getElementById('nervous').className = 'nervous';
+  }
+
     };
 
-  }
+   

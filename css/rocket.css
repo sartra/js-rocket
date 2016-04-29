@@ -13,6 +13,27 @@ svg{
   padding: 20px;
 }
 
+.interface{
+  text-align: center;
+  padding: 20px;
+}
+
+a.button{
+  display: inline-block;
+  background-color: grey;
+  padding: 20px 40px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  transition: color 300ms;
+}
+
+a:hover{
+  color: orange;
+}
+
 .state1, 
 .state2, 
 .state3,
@@ -49,7 +70,8 @@ body.body-state5 .state5{
 }
 
 .ground {
-  background-color: #D5E4D5;
+/*  background: url('../img/ground.png') no-repeat center top;
+*/  background-color: #D5E4D5;
   position: absolute;
   bottom: 0;
   left:0;
@@ -59,14 +81,68 @@ body.body-state5 .state5{
 
 .rocket{
   position: absolute; /*based on parent (div class right)*/
-  left: 50%;
-  bottom: 20px;
-  transition: bottom 3000ms;
+  left: 50%; 
+  bottom: 0px;
+  width: 143px;
+  height: 272px;
+  margin-left: -71.5px;
+  background: url('../img/rocket-state1.png') no-repeat 0 0;
   transition-timing-function: ease-in;
+  transition: bottom 5000ms;
 }
 
-body.body-state1 .rocket,
-body.body-state5 .rocket{
+.nervous {
+  position: absolute;
+  bottom: 220px;
+  left: 50%;
+  margin-left: -180px;
+  background: url('../img/nervous.png') no-repeat 0 0;
+  width: 223px;
+  height: 100px;
+  display: none;
+}
+
+.nervous.show {
+  display: block;
+}
+
+.cant-wait {
+  position: absolute;
+  bottom: 230px;
+  left: 50%;
+/*  margin-left: -180px;
+*/  background: url('../img/cant-wait.png') no-repeat 0 0;
+  width: 206px;
+  height: 65px;
+  display: none;
+}
+
+.cant-wait.show {
+  display: block;
+}
+
+/*  ROCKET BG IMAGE  */
+body.body-state2 .rocket {
+    background-image: url('../img/rocket-state2.gif'); /*The 'background' CCS property combines a bunch of rules into 1 line, whereas the background-image, or background-color CSS property just sets 1 thing.*/
+
+}
+
+body.body-state3 .rocket,
+body.body-state4 .rocket {
+  background-image: url('../img/rocket-state3.gif'); 
+}
+
+body.body-state5 .rocket {
+  background-image: url('../img/boom.png'); 
+  width: 209px;
+  height: 200px;
+  margin-left: -104.5px; /*to make up for the width putting it off center*/
+}
+
+
+
+
+body.body-state1 .rocket {
   transition: none;
 }
 
@@ -75,11 +151,5 @@ body.body-state4 .rocket{
   bottom: 1000px;
 }
 
-a{
- color: orange;
- font-weight: bold;
-}
 
-a.button{
 
-}
